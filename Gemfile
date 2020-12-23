@@ -41,3 +41,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'active_model_serializers'
+gem 'dotenv-rails'
+gem 'faraday'
+gem 'httparty', '~> 0.13.7'

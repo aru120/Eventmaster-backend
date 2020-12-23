@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   namespace :api do
   resources :users
   resources :events
+  resources :get_events
   end
 end
