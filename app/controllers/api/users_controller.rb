@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+    skip_before_action :authorize, only: [:create]
 
     def index
         users = User.all.includes(:events)
@@ -14,6 +15,10 @@ class Api::UsersController < ApplicationController
             render json: {error: 'failed to create user'}, status: :not_acceptable 
         end
     end 
+
+    def profile
+        render json: {user: current_user}, status: :accepted
+    end
 
     private
     def user_params
