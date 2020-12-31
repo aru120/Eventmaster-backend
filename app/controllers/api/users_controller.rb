@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorized, only: [:create]
 
     def index
         users = User.all.includes(:events)
@@ -16,12 +16,14 @@ class Api::UsersController < ApplicationController
         end
     end 
 
+
     def profile
-        render json: {user: current_user}, status: :accepted
+        render json: { user: current_user}, status: :accepted
     end
 
     private
     def user_params
         params.require(:user).permit(:username, :password, :name, :zipcode)
     end
+
 end
