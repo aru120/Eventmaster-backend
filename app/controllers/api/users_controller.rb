@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     end
 
     def create 
-        @user = User.create(user_params)
+        @user = User.create!(user_params)
 
         if @user.valid?
             render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
