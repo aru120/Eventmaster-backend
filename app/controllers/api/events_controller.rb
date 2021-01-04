@@ -1,4 +1,5 @@
 class Api::EventsController < ApplicationController
+    skip_before_action :authorized
 
     def index
         events = Event.all
@@ -18,7 +19,8 @@ class Api::EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:title, :artist, :venue, :date, :image)
+        params.require(:event).permit(:title, :artist, :venue, :date, :image, :ticketmasterid)
+    end 
 
     
 end

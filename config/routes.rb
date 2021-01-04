@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :events
   resources :get_events
+  resources :user_events
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
   end
