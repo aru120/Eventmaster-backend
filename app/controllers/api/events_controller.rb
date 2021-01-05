@@ -6,6 +6,11 @@ class Api::EventsController < ApplicationController
         render json: events
     end
 
+    def show 
+        event = Event.find(params[:id])
+        render json: event
+    end 
+
     def create
         event = Event.create!(event_params)
 
@@ -14,6 +19,12 @@ class Api::EventsController < ApplicationController
         else
             render json: {error: 'failed to save event'}, status: :not_acceptable 
         end
+    end 
+
+    def destroy
+        event = Event.find(params[:id])
+        event.destroy!
+        render json: {}
     end 
 
     private
