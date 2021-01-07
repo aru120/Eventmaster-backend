@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_161827) do
+ActiveRecord::Schema.define(version: 2021_01_07_211443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,10 @@ ActiveRecord::Schema.define(version: 2021_01_06_161827) do
     t.string "ticketmasterid"
     t.string "time"
     t.string "url"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
   end
 
   create_table "user_events", force: :cascade do |t|

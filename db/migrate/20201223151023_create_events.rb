@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :venue
       t.string :date
       t.string :image
-
+      
       t.timestamps
     end
   end

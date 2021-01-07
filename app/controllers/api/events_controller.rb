@@ -30,7 +30,7 @@ class Api::EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:title, :venue, :date, :image, :ticketmasterid,:time, :url, :artists => [])
+        params.require(:event).permit(:title, :venue, :date, :image, :ticketmasterid,:time, :url, :address,:city,:state,:zipcode, :artists => [])
     end 
 
     
